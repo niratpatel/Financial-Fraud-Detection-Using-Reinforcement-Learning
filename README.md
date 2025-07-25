@@ -23,8 +23,8 @@ Traditional fraud detection models are good at one thing: **classifying** if a t
 
 ---
 
-## Our Solution: A Hybrid Approach 💡
-We reframe fraud detection from a simple classification task to a **sequential decision-making problem**. Our framework decouples the system into two specialized parts:
+## My Solution: A Hybrid Approach 💡
+I reframe fraud detection from a simple classification task to a **sequential decision-making problem**. This framework decouples the system into two specialized parts:
 
 1.  **The Perception Model (The "Eyes")**: A state-of-the-art LightGBM model analyzes over 400 features for each transaction to distill a single, powerful `risk_score`. It excels at pattern recognition.
 
@@ -37,10 +37,10 @@ This hybrid model learns not just to predict risk, but to make the most profitab
 ---
 
 ## Key Results 📊
-We tested our framework on the massive and realistic IEEE-CIS Fraud Detection dataset. Our hybrid RL approach decisively outperformed a powerful, highly-tuned supervised LightGBM baseline on the metrics that matter most.
+I tested this framework on the massive and realistic IEEE-CIS Fraud Detection dataset. My hybrid RL approach decisively outperformed a powerful, highly-tuned supervised LightGBM baseline on the metrics that matter most.
 
 ### Head-to-Head Performance
-While both models had a similar ability to rank transactions (ROC-AUC), our RL model was vastly superior at actually identifying fraud in a practical setting.
+While both models had a similar ability to rank transactions (ROC-AUC),the RL model was vastly superior at actually identifying fraud in a practical setting.
 
 | Metric | V-Final: RL Ensemble 🧠 | V0: Supervised Baseline 👀 | Improvement |
 | :--- | :---: | :---: | :---: |
@@ -52,11 +52,11 @@ While both models had a similar ability to rank transactions (ROC-AUC), our RL m
 The **22x improvement in PR-AUC** shows the RL model's vastly superior ability to handle the severe class imbalance and find fraudulent transactions effectively.
 
 ### Analysis of Disagreements: Proving Superior Decision-Making
-We isolated the 8,447 test transactions where the RL model and the baseline disagreed. The results were clear:
+I isolated the 8,447 test transactions where the RL model and the baseline disagreed. The results were clear:
 
-* **Catching Missed Fraud**: For fraudulent transactions the baseline was about to **approve**, our RL agent correctly overturned the decision and **flagged them with 99% recall**. It acts as a critical safety net.
+* **Catching Missed Fraud**: For fraudulent transactions the baseline was about to **approve**, the RL agent correctly overturned the decision and **flagged them with 99% recall**. It acts as a critical safety net.
 
-* **Reducing False Alarms**: For legitimate transactions the baseline was about to **block**, our RL agent correctly overturned the decision and **approved them 66% of the time**, reducing customer friction and operational costs.
+* **Reducing False Alarms**: For legitimate transactions the baseline was about to **block**, the RL agent correctly overturned the decision and **approved them 66% of the time**, reducing customer friction and operational costs.
 
 > In essence, when the models disagreed, the RL agent's policy made the more intelligent, value-driven decision **78% of the time**.
 
